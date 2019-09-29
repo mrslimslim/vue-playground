@@ -31,6 +31,11 @@ export default [
                 component: resolve => require(['../pages/upload/'], resolve)
             },
             {
+                path: '/dad-to-child', //上传器测试
+                meta: { auth: false },
+                component: resolve => require(['../pages/dad-to-child/dad'], resolve)
+            },
+            {
                 path: '*', //其他页面，强制跳转到登录页面
                 redirect: '/login'
             }

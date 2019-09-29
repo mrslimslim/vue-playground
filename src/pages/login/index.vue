@@ -49,11 +49,8 @@
 			}
 		},
 		methods: {
-            ...mapActions([USER_SIGNIN]),
+      ...mapActions([USER_SIGNIN]),
 			submit() {
-				this.btn = true
-				if(!this.form.id || !this.form.name) return
-				this.USER_SIGNIN(this.form)
 				this.$router.replace({ path: '/home' })
 			}
 		}

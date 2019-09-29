@@ -12,25 +12,22 @@
 </style>
 <template>
 	<div>
+		<h1>{{title}}</h1>
 		<v-header title="首页">
-			<router-link slot="right" v-if="user.id" to="/home">{{user.name}}</router-link>
+			<router-link slot="left" to="/home">home</router-link>
+			<router-link slot="left" to="/upload">upload</router-link>
+			<router-link slot="left" to="/dad-to-child">dad-to-child</router-link>
 		</v-header>
-		<div class="login-msg" v-if="!user.id">
-			<router-link to="/login">你还未登录，请先登录</router-link>
-		</div>
-		<div class="msg" v-if="user.id">
-			<img width="50" :src="logo" alt=""> <br>
-			哈哈，恭喜你已经入坑Vue2
-		</div>
+
+		
 	</div>
 </template>
 <script>
     import { mapState } from 'vuex'
-	import logo from './logo.png'
     export default {
 		data() {
 			return {
-				logo
+				title:'vue2-components'
 			}
 		},
         computed: mapState({ user: state => state.user }),
